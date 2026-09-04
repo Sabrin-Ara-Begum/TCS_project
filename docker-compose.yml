@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  restaurant-db:
+    image: postgres:16
+    container_name: restaurant_postgres
+    environment:
+      POSTGRES_USER: restaurant_user
+      POSTGRES_PASSWORD: restaurant_password
+      POSTGRES_DB: restaurant_db
+    ports:
+      # Mapping to 5433 to avoid conflicting with your other Postgres container
+      - "5433:5432"
+    volumes:
+      - restaurant-pgdata:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  restaurant-pgdata:
