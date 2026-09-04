@@ -36,3 +36,4 @@ build/
 .DS_Store
 *.exec
 *.log
+BEGINNER_GUIDE.html
